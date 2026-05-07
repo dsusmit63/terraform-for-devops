@@ -62,4 +62,5 @@ resource "aws_instance" "myec2instance" {
   tags = {
     Name = var.ec2_instance_name
   }
+  user_data       = file("install_nginx.sh")
 }
