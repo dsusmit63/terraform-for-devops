@@ -50,16 +50,16 @@ resource "aws_vpc_security_group_egress_rule" "myegressrule" {
 }
 # instance
 resource "aws_instance" "myec2instance" {
-  count = 1
+  count = var.ec2_instance_count
   key_name = aws_key_pair.mykeypair.key_name
   vpc_security_group_ids = [aws_security_group.mysecuritygroup.id]
-  ami = "ami-091138d0f0d41ff90"
-  instance_type = "t2.micro"
+  ami = var.ec2_instance_ami
+  instance_type = var.ec2_instance_type
   root_block_device {
-    volume_size = 8
-    volume_type = "gp3"
+    volume_size = var.ec2_instance_root_volume_size
+    volume_type = var.ec2_instance_root_volume_type
   }
   tags = {
-    Name = "My EC2 Instance"
+    Name = var.ec2_instance_name
   }
 }
