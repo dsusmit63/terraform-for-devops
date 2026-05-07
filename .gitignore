@@ -1,0 +1,5 @@
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+my-ec2-key.pub
+my-ec2-key
