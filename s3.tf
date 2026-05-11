@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "mybucket" {
-  bucket = "my-terra-s3-bucket-020526"
+  bucket = var.bucket_name
   tags = {
-    Name = "My-Terra-S3-Bucket-020526"
+    Name = var.bucket_tag
   }
 }
