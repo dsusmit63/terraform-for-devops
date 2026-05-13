@@ -1,5 +1,5 @@
 resource "local_file" "myfile" {
-  filename = "dummy.txt"
-  content = "This is a dummy file"
-  file_permission = "0660"
+  filename = upper(replace(var.filename,"m","p"))
+  content = lower(var.filecontent)
+  file_permission = var.file_permission
 }
