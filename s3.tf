@@ -1,6 +1,7 @@
 resource "aws_s3_bucket" "mybucket" {
-  bucket = var.bucket_name
+  count = var.s3_bucket_count
+  bucket = var.bucket_name[count.index]
   tags = {
-    Name = var.bucket_tag
+    Name = var.bucket_tag[count.index]
   }
 }
