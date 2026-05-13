@@ -1,3 +1,6 @@
+filename = "dummy.txt"
+filecontent = "This is a dummy file"
+file_permission = "0660"
 bucket_name = ["my-terra-s3-bucket-020526-1","my-terra-s3-bucket-020526-2","my-terra-s3-bucket-020526-3"]
 bucket_tag = ["My-Terra-S3-Bucket-020526-1","My-Terra-S3-Bucket-020526-2","My-Terra-S3-Bucket-020526-3"]
 s3_bucket_count = 3
