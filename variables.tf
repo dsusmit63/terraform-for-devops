@@ -1,3 +1,15 @@
+variable "filename" {
+  type = string
+  description = "Local filename"
+}
+variable "filecontent" {
+  type = string
+  description = "Local file content"
+}
+variable "file_permission" {
+  type = string
+  description = "Local file permission"
+}
 variable "bucket_name" {
   type = list(string)
   description = "Name of s3 bucket"
