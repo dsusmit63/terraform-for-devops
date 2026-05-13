@@ -1,8 +1,10 @@
-bucket_name = "my-terra-s3-bucket-020526"
-bucket_tag = "My-Terra-S3-Bucket-020526"
-ec2_instance_count = 1
+bucket_name = ["my-terra-s3-bucket-020526-1","my-terra-s3-bucket-020526-2","my-terra-s3-bucket-020526-3"]
+bucket_tag = ["My-Terra-S3-Bucket-020526-1","My-Terra-S3-Bucket-020526-2","My-Terra-S3-Bucket-020526-3"]
+s3_bucket_count = 3
+ec2_instance_count = 3
 ec2_instance_ami = "ami-091138d0f0d41ff90"
-ec2_instance_type = "t2.micro"
-ec2_instance_root_volume_size = 8
+ec2_instance_type = ["t2.micro", "t3.micro", "t2.medium"]
+ec2_instance_root_volume_size = [8,10]
 ec2_instance_root_volume_type = "gp3"
 ec2_instance_name = "My EC2 Instance"
+environment = "prod"
