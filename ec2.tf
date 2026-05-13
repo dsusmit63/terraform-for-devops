@@ -54,13 +54,13 @@ resource "aws_instance" "myec2instance" {
   key_name = aws_key_pair.mykeypair.key_name
   vpc_security_group_ids = [aws_security_group.mysecuritygroup.id]
   ami = var.ec2_instance_ami
-  instance_type = var.ec2_instance_type
+  instance_type = var.environment == "dev" ? var.ec2_instance_type[0] : var.environment == "stg" ? var.ec2_instance_type[1]: var.ec2_instance_type[2]
   root_block_device {
-    volume_size = var.ec2_instance_root_volume_size
+    volume_size = var.environment == "prod" ? var.ec2_instance_root_volume_size[1]: var.ec2_instance_root_volume_size[0]
     volume_type = var.ec2_instance_root_volume_type
   }
   tags = {
-    Name = var.ec2_instance_name
+    Name = "${var.ec2_instance_name}-${var.environment}"
   }
   user_data = file("install_nginx.sh")
 }
